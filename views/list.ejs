@@ -1,0 +1,27 @@
+<%- include('header'); -%>
+
+    <div class="box" style="position: relative; margin: 0;
+     background-color: rgb(89, 131, 158); text-align: center;">
+        <h1><%= day %> </h1>
+    </div>
+
+    <div class="box" id="heading">
+         <h1><%= listTitle %> </h1>
+    </div>
+        
+    <div class="box">
+        <% for(let i=0; i < newListItems.length; i++) { %>
+            <div class="item">
+                <input type="checkbox"/>
+                <p> <%= newListItems[i] %> </p>
+            </div>
+        <% } %>
+
+        <form action="/" method="post" class="item">
+            <input type="text" name="newItem" placeholder="Digite aqui" autocomplete="off">
+            
+            <button type="submit" name="listTitle" value= <%= listTitle %> >+</button>
+        </form>
+    </div>
+
+    <%- include('footer'); -%>
